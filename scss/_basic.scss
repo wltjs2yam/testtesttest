@@ -1,0 +1,200 @@
+
+header {
+  z-index:100;
+  position:fixed;
+  width:100%;
+  color:white;
+  background:transparent;
+  .header_in {
+  max-width:1240px;
+  margin:auto;
+  height:120px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+      span {font-size:2em; font-weight:bold;}
+  }
+  nav { &:after {display:block; content:''; clear:both;}
+       .sub_bar {float:none;}
+      ul { 
+          li { float: left;
+              a { display:inline-block; padding:30px;
+                  font-size:20px; font-weight:bold;
+              &:hover {color:#af9af0;}}
+          }
+      }
+  } &.on {background:rgba(0,0,0,0.3); color:black;
+  .header_in {height:50px;}
+  h1 {
+      span {font-size:1.5em;} 
+  }
+  ul > li > a {padding:15px; font-size:14px;}
+}
+}
+.trigger , .close {display:none;}
+
+
+section {
+  display:flex; 
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  h2 {font-size: 3rem;}
+}
+
+#home {background:transparent; height:100vh;
+  .main_text {position:absolute; top:50%; left:10%; 
+       color:white; white-space:nowrap;
+  z-index:99; margin-bottom:clamp(50px, 3vw, 80px);
+  .text2 {font-size:clamp(16px, 3vw, 40px);
+      margin-bottom:clamp(200px, 20vw, 200px); 
+      text-shadow:0 0 10px rgba(0,0,0,50%);
+  font-weight: bold;}
+  .text1 { font-size:clamp(40px,3vw,80px);
+      text-shadow:0 0 10px rgba(0,0,0,50%);
+  font-weight:bold;}
+  }
+}
+#home video {width:100%; height:100%; object-fit:cover;}
+
+
+
+
+// 헤더부분, 김지선 메인 (명소부분)
+@media (max-width:1169px){
+  header {
+  .header_in {
+      width:100%; height:80px;
+      h1 {
+          font-size:1em; margin-left:20px;
+          span {font-size:1.6em;
+          img {width:250px;}}
+          i {position:relative; bottom:3px;}
+      }
+  }
+}
+  #home {
+  .main_text {
+    p {font-size:50px;}
+    h2 {font-size:25px;}
+  }
+}
+
+@media (max-width:830px) {
+  
+  header {
+      nav {position:fixed; 
+          top:0; right:-100%; 
+          bottom:0; width:300px;
+          background:#473970;
+          z-index:999;
+          box-shadow:0 0 50px rgba(0,0,0,50%);
+          transition:0.5s ease-in;
+      &.active {right:0;}
+      ul {
+          padding:100px 0 0 50px;
+          > li { float:none;
+          > a {padding:20px; font-size:20px; color:white;}
+          }
+      }}
+      .close{
+          cursor: pointer;
+          display:block;
+          position:absolute; 
+          left:10px; top:10px; background:transparent;
+          i {font-size:30px; color:white;}
+      }
+      .trigger {display:block;
+          i {font-size:20px; margin-right:20px;}
+      }
+      &.on {background:rgba(0,0,0,0.3); color:black;
+          nav ul > li > a {padding:20px; font-size:20px;}
+      }
+  } 
+  #home {height:759px;
+    .main_text {
+      text-align:center;
+      p {font-size:40px; position: relative; bottom:200px;}
+      h2 {font-size:16px; position:relative; left:7px; bottom:200px;}
+    }
+  }
+}
+
+@media (max-width:390px){
+  #home {height:746px;
+    .main_text {
+      text-align:center;
+      p {font-size:40px; position: relative; bottom:200px;}
+      h2 {font-size:16px; position:relative; left:7px; bottom:200px;}
+    }
+  }
+}
+footer {}
+}
+/******************* 여기까지 김지선 메인********************/
+
+
+
+/*********** 이종민 푸터 ************/
+footer { padding:15px 6px; color:#fff; background:black;}
+  ul.qiuckmenu { display:table; width:100%; }
+  .qiuckmenu li { 
+    
+    display:table-cell; width:33.33%;
+    background:black;
+    border-right:1px solid #222;
+    border-left:1px solid #ccc;
+  }  
+  .qiuckmenu li:first-child { border-left:none; }
+  .qiuckmenu li:last-child { border-right:none; }
+  .qiuckmenu a { 
+    display:block;
+    text-align: center;
+    line-height:33px;
+    font-size:16px;
+    cursor: pointer;
+  }  
+  .telSns { margin-top: 30px; }
+  .telSns a { font-size:22px; margin-left: 20px;  }
+  .telSns img { 
+    width:24px; margin-left:5px; vertical-align:bottom; }
+  .pc { 
+    position:absolute; right:6px; margin-top: -25px;
+    text-align:right;
+    }
+  .pc a { 
+    display:inline-block; padding:4px 6px;
+    margin-bottom:5px;
+    font-size:12px; }
+  
+  .copy { font-size:10px; margin-top: 15px; margin-left: 20px; }
+  .pc img { width: 100px; margin-top: 15px;  }
+  /*********** 이종민 푸터 ************/
+
+
+  .header_in_navbar > li {}
+
+  .header_in_bar_suv { 
+    display:none;
+    position:absolute; top:80px;
+    z-index:200;
+  }
+  .header_in_bar_suv a { 
+    display:block;
+    line-height:40px;
+    text-align:left;
+    padding:8px 0 0 30px;
+    color:$main-color2;
+    font-size:16px;
+    font-weight:lighter;
+    position:relative; top:30px;
+  }
+  .header_in_bar_suv a:hover { color:#c8bbf0; }
+  
+  .header_in_bar_suv_shadow { 
+    display:none;
+    position:fixed; top:100px; left:0;
+    width: 100%; height:220px;
+    background: rgba(0,0,0,0.5);
+    z-index:99;
+  }

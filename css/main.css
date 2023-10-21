@@ -1,0 +1,1848 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+*, html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+  font-family: "Pretendard-Regular";
+}
+
+ol, ul, li {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header {
+  z-index: 100;
+  position: fixed;
+  width: 100%;
+  color: white;
+  background: transparent;
+}
+header .header_in {
+  max-width: 1240px;
+  margin: auto;
+  height: 120px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .header_in span {
+  font-size: 2em;
+  font-weight: bold;
+}
+header nav:after {
+  display: block;
+  content: "";
+  clear: both;
+}
+header nav .sub_bar {
+  float: none;
+}
+header nav ul li {
+  float: left;
+}
+header nav ul li a {
+  display: inline-block;
+  padding: 30px;
+  font-size: 20px;
+  font-weight: bold;
+}
+header nav ul li a:hover {
+  color: #af9af0;
+}
+header.on {
+  background: rgba(0, 0, 0, 0.3);
+  color: black;
+}
+header.on .header_in {
+  height: 50px;
+}
+header.on h1 span {
+  font-size: 1.5em;
+}
+header.on ul > li > a {
+  padding: 15px;
+  font-size: 14px;
+}
+
+.trigger, .close {
+  display: none;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+section h2 {
+  font-size: 3rem;
+}
+
+#home {
+  background: transparent;
+  height: 100vh;
+}
+#home .main_text {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  color: white;
+  white-space: nowrap;
+  z-index: 99;
+  margin-bottom: clamp(50px, 3vw, 80px);
+}
+#home .main_text .text2 {
+  font-size: clamp(16px, 3vw, 40px);
+  margin-bottom: clamp(200px, 20vw, 200px);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+}
+#home .main_text .text1 {
+  font-size: clamp(40px, 3vw, 80px);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+}
+
+#home video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 1169px) {
+  header .header_in {
+    width: 100%;
+    height: 80px;
+  }
+  header .header_in h1 {
+    font-size: 1em;
+    margin-left: 20px;
+  }
+  header .header_in h1 span {
+    font-size: 1.6em;
+  }
+  header .header_in h1 span img {
+    width: 250px;
+  }
+  header .header_in h1 i {
+    position: relative;
+    bottom: 3px;
+  }
+  #home .main_text p {
+    font-size: 50px;
+  }
+  #home .main_text h2 {
+    font-size: 25px;
+  }
+}
+@media (max-width: 1169px) and (max-width: 830px) {
+  header nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    bottom: 0;
+    width: 300px;
+    background: #473970;
+    z-index: 999;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+    transition: 0.5s ease-in;
+  }
+  header nav.active {
+    right: 0;
+  }
+  header nav ul {
+    padding: 100px 0 0 50px;
+  }
+  header nav ul > li {
+    float: none;
+  }
+  header nav ul > li > a {
+    padding: 20px;
+    font-size: 20px;
+    color: white;
+  }
+  header .close {
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    background: transparent;
+  }
+  header .close i {
+    font-size: 30px;
+    color: white;
+  }
+  header .trigger {
+    display: block;
+  }
+  header .trigger i {
+    font-size: 20px;
+    margin-right: 20px;
+  }
+  header.on {
+    background: rgba(0, 0, 0, 0.3);
+    color: black;
+  }
+  header.on nav ul > li > a {
+    padding: 20px;
+    font-size: 20px;
+  }
+  #home {
+    height: 759px;
+  }
+  #home .main_text {
+    text-align: center;
+  }
+  #home .main_text p {
+    font-size: 40px;
+    position: relative;
+    bottom: 200px;
+  }
+  #home .main_text h2 {
+    font-size: 16px;
+    position: relative;
+    left: 7px;
+    bottom: 200px;
+  }
+}
+@media (max-width: 1169px) and (max-width: 390px) {
+  #home {
+    height: 746px;
+  }
+  #home .main_text {
+    text-align: center;
+  }
+  #home .main_text p {
+    font-size: 40px;
+    position: relative;
+    bottom: 200px;
+  }
+  #home .main_text h2 {
+    font-size: 16px;
+    position: relative;
+    left: 7px;
+    bottom: 200px;
+  }
+}
+/******************* 여기까지 김지선 메인********************/
+/*********** 이종민 푸터 ************/
+footer {
+  padding: 15px 6px;
+  color: #fff;
+  background: black;
+}
+
+ul.qiuckmenu {
+  display: table;
+  width: 100%;
+}
+
+.qiuckmenu li {
+  display: table-cell;
+  width: 33.33%;
+  background: black;
+  border-right: 1px solid #222;
+  border-left: 1px solid #ccc;
+}
+
+.qiuckmenu li:first-child {
+  border-left: none;
+}
+
+.qiuckmenu li:last-child {
+  border-right: none;
+}
+
+.qiuckmenu a {
+  display: block;
+  text-align: center;
+  line-height: 33px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.telSns {
+  margin-top: 30px;
+}
+
+.telSns a {
+  font-size: 22px;
+  margin-left: 20px;
+}
+
+.telSns img {
+  width: 24px;
+  margin-left: 5px;
+  vertical-align: bottom;
+}
+
+.pc {
+  position: absolute;
+  right: 6px;
+  margin-top: -25px;
+  text-align: right;
+}
+
+.pc a {
+  display: inline-block;
+  padding: 4px 6px;
+  margin-bottom: 5px;
+  font-size: 12px;
+}
+
+.copy {
+  font-size: 10px;
+  margin-top: 15px;
+  margin-left: 20px;
+}
+
+.pc img {
+  width: 100px;
+  margin-top: 15px;
+}
+
+/*********** 이종민 푸터 ************/
+.header_in_bar_suv {
+  display: none;
+  position: absolute;
+  top: 80px;
+  z-index: 200;
+}
+
+.header_in_bar_suv a {
+  display: block;
+  line-height: 40px;
+  text-align: left;
+  padding: 8px 0 0 30px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: lighter;
+  position: relative;
+  top: 30px;
+}
+
+.header_in_bar_suv a:hover {
+  color: #c8bbf0;
+}
+
+.header_in_bar_suv_shadow {
+  display: none;
+  position: fixed;
+  top: 100px;
+  left: 0;
+  width: 100%;
+  height: 220px;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+}
+
+/* Slider */
+/* Icons */
+@font-face {
+  font-family: "slick";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../fonts/slick.eot");
+  src: url("../fonts/slick.eot?#iefix") format("embedded-opentype"), url("../fonts/slick.woff") format("woff"), url("../fonts/slick.ttf") format("truetype"), url("../fonts/slick.svg#slick") format("svg");
+}
+/* Arrows */
+.slick-prev,
+.slick-next {
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  cursor: pointer;
+  color: transparent;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.slick-prev:hover,
+.slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus {
+  color: transparent;
+  outline: none;
+  background: transparent;
+}
+
+.slick-prev:hover:before,
+.slick-prev:focus:before,
+.slick-next:hover:before,
+.slick-next:focus:before {
+  opacity: 1;
+}
+
+.slick-prev.slick-disabled:before,
+.slick-next.slick-disabled:before {
+  opacity: 0.25;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  font-family: "slick";
+  font-size: 20px;
+  line-height: 1;
+  opacity: 0.75;
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.slick-prev {
+  left: 25px;
+}
+
+[dir=rtl] .slick-prev {
+  right: 25px;
+  left: auto;
+}
+
+.slick-prev:before {
+  content: "◀";
+}
+
+[dir=rtl] .slick-prev:before {
+  content: "▶";
+}
+
+.slick-next {
+  right: 25px;
+}
+
+[dir=rtl] .slick-next {
+  right: auto;
+  left: 25px;
+}
+
+.slick-next:before {
+  content: "▶";
+}
+
+[dir=rtl] .slick-next:before {
+  content: "◀";
+}
+
+/* Dots */
+.slick-dotted.slick-slider {
+  margin-bottom: 30px;
+}
+
+.slick-dots {
+  position: absolute;
+  bottom: -25px;
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.slick-dots li {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.slick-dots li button {
+  font-size: 0;
+  line-height: 0;
+  display: block;
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+  cursor: pointer;
+  color: transparent;
+  border: 0;
+  outline: none;
+  background: transparent;
+}
+
+.slick-dots li button:hover,
+.slick-dots li button:focus {
+  outline: none;
+}
+
+.slick-dots li button:hover:before,
+.slick-dots li button:focus:before {
+  opacity: 1;
+}
+
+.slick-dots li button:before {
+  font-family: "slick";
+  font-size: 50px;
+  line-height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  content: "•";
+  text-align: center;
+  opacity: 0.25;
+  color: black;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.slick-dots li.slick-active button:before {
+  opacity: 0.75;
+  color: black;
+}
+
+/* Slider */
+.slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.slick-list:focus {
+  outline: none;
+}
+
+.slick-list.dragging {
+  cursor: pointer;
+  cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.slick-track:before,
+.slick-track:after {
+  display: table;
+  content: "";
+}
+
+.slick-track:after {
+  clear: both;
+}
+
+.slick-loading .slick-track {
+  visibility: hidden;
+}
+
+.slick-slide {
+  display: none;
+  float: left;
+  height: 100%;
+  min-height: 1px;
+}
+
+[dir=rtl] .slick-slide {
+  float: right;
+}
+
+.slick-slide img {
+  display: block;
+}
+
+.slick-slide.slick-loading img {
+  display: none;
+}
+
+.slick-slide.dragging img {
+  pointer-events: none;
+}
+
+.slick-initialized .slick-slide {
+  display: block;
+}
+
+.slick-loading .slick-slide {
+  visibility: hidden;
+}
+
+.slick-vertical .slick-slide {
+  display: block;
+  height: auto;
+  border: 1px solid transparent;
+}
+
+.slick-arrow.slick-hidden {
+  display: none;
+}
+
+/*********** 서브페이지  ************/
+.sub_header {
+  z-index: 100;
+  position: fixed;
+  width: 100%;
+  color: black;
+  background: white;
+}
+.sub_header .sub_header_in {
+  max-width: 1240px;
+  margin: auto;
+  height: 120px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sub_header .sub_header_in section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.sub_header .sub_header_in span {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+#place {
+  background: white;
+  height: 400px;
+  width: 100%;
+  display: inline-block;
+  padding: 3px;
+}
+#place .right {
+  width: 30%;
+  height: 400px;
+  float: right;
+}
+#place .right h2 {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  margin-top: 350px;
+}
+#place .right p {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  font-size: clamp(15px, 3vw, 20px);
+  text-align: center;
+}
+#place .right span {
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+  text-decoration: underline;
+  font-size: 17px;
+  color: gray;
+}
+#place .left {
+  width: 70%;
+  height: 700px;
+}
+#place .left .main_img {
+  object-fit: cover;
+}
+
+.sub_header_in_bar_suv {
+  display: none;
+  position: absolute;
+  top: 80px;
+  z-index: 200;
+}
+
+.sub_header_in_bar_suv a {
+  display: block;
+  line-height: 40px;
+  text-align: left;
+  padding: 8px 0 0 30px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: lighter;
+  position: relative;
+  top: 30px;
+}
+
+.sub_header_in_bar_suv a:hover {
+  color: #c8bbf0;
+}
+
+.sub_header_in_bar_suv_shadow {
+  display: none;
+  position: fixed;
+  top: 100px;
+  left: 0;
+  width: 100%;
+  height: 220px;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.swiper_text {
+  position: absolute;
+  bottom: 90px;
+  left: 20px;
+  color: #fff;
+}
+.swiper_text h4 {
+  font-size: 30px;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.swiper-button-prev, .swiper-button-next {
+  color: white;
+  background: rgba(255, 255, 255, 0.4);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+.swiper-button-prev:after, .swiper-button-next:after {
+  font-size: 20px;
+}
+
+.swiper-pagination-fraction {
+  color: white;
+  width: auto;
+  left: 90%;
+  bottom: 20px;
+  top: auto;
+  padding: 0 5px;
+  border-radius: 9999px;
+  font-size: 11px;
+  line-height: 1.65;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.loction {
+  width: auto;
+  padding: 10px 20px 0 15px;
+}
+
+.location_inner {
+  display: block;
+  margin-left: 120px;
+  padding: 40px 0 70px 0;
+  font-size: 18px;
+  color: black;
+}
+
+.loaction i {
+  width: 21px;
+  height: 21px;
+}
+
+.sub_nav ul {
+  display: inline-block;
+  margin-left: 120px;
+}
+
+.sub_nav ul:after {
+  display: block;
+  content: "";
+  clear: both;
+}
+
+.sub_nav li {
+  float: left;
+  position: relative;
+}
+
+.sub_nav li a {
+  display: block;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+.sub_nav li.active a {
+  border-bottom: 1px solid #473970;
+  color: #473970;
+  font-weight: 500;
+  margin-bottom: -4px;
+}
+
+.sub_nav li.active a:after {
+  position: absolute;
+  content: "";
+  left: calc(50% - 11px);
+  bottom: -9px;
+  width: 22px;
+  height: 5px;
+  background: url("../img/icon_snb_arr.png");
+}
+
+.content_wrap {
+  padding: 100px;
+  margin-left: 130px;
+}
+
+/*********** 이종민 푸터 ************/
+footer {
+  padding: 15px 6px;
+  color: #fff;
+  background: black;
+}
+
+ul.qiuckmenu {
+  display: table;
+  width: 100%;
+}
+
+.qiuckmenu li {
+  display: table-cell;
+  width: 33.33%;
+  background: black;
+  border-right: 1px solid #222;
+  border-left: 1px solid #ccc;
+}
+
+.qiuckmenu li:first-child {
+  border-left: none;
+}
+
+.qiuckmenu li:last-child {
+  border-right: none;
+}
+
+.qiuckmenu a {
+  display: block;
+  text-align: center;
+  line-height: 33px;
+  font-size: 16px;
+}
+
+.telSns {
+  margin-top: 30px;
+}
+
+.telSns a {
+  font-size: 22px;
+  margin-left: 20px;
+}
+
+.telSns img {
+  width: 24px;
+  margin-left: 5px;
+  vertical-align: bottom;
+}
+
+.pc {
+  position: absolute;
+  right: 6px;
+  margin-top: -25px;
+  text-align: right;
+}
+
+.pc a {
+  display: inline-block;
+  padding: 4px 6px;
+  margin-bottom: 5px;
+  font-size: 12px;
+}
+
+.copy {
+  font-size: 10px;
+  margin-top: 15px;
+  margin-left: 20px;
+}
+
+.pc img {
+  width: 100px;
+  margin-top: 15px;
+}
+
+/*********** 이종민 푸터 ************/
+/*********** 서브페이지  ************/
+.sub_header {
+  z-index: 100;
+  position: fixed;
+  width: 100%;
+  color: black;
+  background: white;
+}
+.sub_header .sub_header_in {
+  max-width: 1240px;
+  margin: auto;
+  height: 120px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sub_header .sub_header_in section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.sub_header .sub_header_in span {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.sub_header_in_bar_suv {
+  display: none;
+  position: absolute;
+  top: 80px;
+  z-index: 200;
+}
+
+.sub_header_in_bar_suv a {
+  display: block;
+  line-height: 40px;
+  text-align: left;
+  padding: 8px 0 0 30px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: lighter;
+  position: relative;
+  top: 30px;
+}
+
+.sub_header_in_bar_suv a:hover {
+  color: #c8bbf0;
+}
+
+.sub_header_in_bar_suv_shadow {
+  display: none;
+  position: fixed;
+  top: 100px;
+  left: 0;
+  width: 100%;
+  height: 220px;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 800px;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  object-fit: fill;
+}
+
+.swiper_text {
+  position: absolute;
+  bottom: 90px;
+  left: 20px;
+  color: #fff;
+}
+.swiper_text h4 {
+  font-size: 30px;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.swiper-button-prev, .swiper-button-next {
+  color: white;
+  background: rgba(255, 255, 255, 0.4);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  margin-top: 50px;
+}
+
+.swiper-button-prev:after, .swiper-button-next:after {
+  font-size: 20px;
+}
+
+.swiper-pagination-fraction {
+  color: white;
+  width: auto;
+  left: 90%;
+  bottom: 20px;
+  top: auto;
+  padding: 0 5px;
+  border-radius: 9999px;
+  font-size: 11px;
+  line-height: 1.65;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.swiper_text {
+  z-index: 200;
+  width: 100%;
+  max-width: 1200px;
+}
+.swiper_text .st_1 {
+  font-size: 58px;
+  font-weight: 700;
+  text-align: center;
+  margin-right: 330px;
+  padding-bottom: 10px;
+}
+.swiper_text .st_2 {
+  font-size: 25px;
+  text-align: center;
+  margin-right: 200px;
+}
+
+.location {
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px auto 0 auto;
+  padding: 20px 0 20px 20px;
+  font-size: 20px;
+  position: relative;
+  right: 10px;
+}
+
+.location i {
+  width: 21px;
+  height: 21px;
+}
+
+.sub_nav {
+  padding-top: 40px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 10px auto 0;
+  position: relative;
+  text-align: left;
+}
+.sub_nav a {
+  display: inline-block;
+  font-size: 16px;
+  color: #767676;
+  font-weight: 400;
+  margin: 0;
+  padding: 5px 10px;
+  margin-right: 10px;
+}
+.sub_nav .place_first {
+  color: #473970;
+  border-bottom: 2px solid #473970;
+}
+.sub_nav .sub_nav ul:after {
+  display: block;
+  content: "";
+  clear: both;
+}
+.sub_nav .sub_nav .active a {
+  border-bottom: 1px solid #473970;
+  color: #473970;
+  font-weight: 500;
+  margin-bottom: -4px;
+}
+.sub_nav .sub_nav .active a:after {
+  position: absolute;
+  content: "";
+  left: calc(50% - 11px);
+  bottom: -9px;
+  width: 22px;
+  height: 5px;
+  background: url("../img/icon_snb_arr.png");
+}
+
+/******* 중간 부분 **********/
+.place_wrap {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding-bottom: 10px;
+}
+
+.place_wrap2 {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  column-gap: 20px;
+  box-sizing: border-box;
+}
+.place_wrap2 li {
+  width: 285px;
+  height: 325px;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+  margin-bottom: 20px;
+}
+.place_wrap2 .place_img img {
+  width: 285px;
+  height: 210px;
+}
+.place_wrap2 .place_img:hover img {
+  transform: scale(1.05);
+  transition: 0.4s;
+}
+.place_wrap2 .place_name {
+  width: 100%;
+  font-size: 17px;
+  font-weight: bold;
+  padding: 15px 10px;
+}
+.place_wrap2 .place_text {
+  width: 100%;
+  font-size: 15px;
+  color: gray;
+  padding: 0 10px;
+  display: -webkit-box;
+  word-wrap: break-word;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.place_wrap2 .place_review {
+  display: block;
+  font-size: 13px;
+  color: gray;
+  padding: 15px 10px;
+  margin-top: 5px;
+}
+
+.place_next {
+  width: 210px;
+  height: 50px;
+  margin: auto;
+  padding: 30px 0 100px;
+}
+.place_next a {
+  display: flex;
+  float: left;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  border-radius: 100%;
+  margin-left: 10px;
+}
+.place_next .pn {
+  background: black;
+  color: #fff;
+}
+
+@media (max-width: 1169px) {
+  .sub_header .sub_header_in {
+    width: 100%;
+    height: 80px;
+  }
+  .sub_header .sub_header_in h1 {
+    font-size: 1em;
+    margin-left: 20px;
+  }
+  .sub_header .sub_header_in h1 span {
+    font-size: 1.6em;
+  }
+  .sub_header .sub_header_in h1 i {
+    position: relative;
+    bottom: 3px;
+  }
+}
+@media (max-width: 1024px) {
+  .place_wrap2 {
+    display: inline-block;
+    width: 100%;
+    height: 500px;
+  }
+  .place_wrap2 li {
+    width: 100%;
+  }
+  .place_wrap2 li .place_img img {
+    width: 100%;
+    object-fit: fill;
+  }
+  .place_wrap2 li .place_name {
+    width: 100%;
+  }
+  .place_wrap2 li .place_text {
+    width: 100%;
+  }
+}
+@media (max-width: 830px) {
+  .place_wrap2 {
+    display: inline-block;
+    width: 100%;
+    height: 500px;
+  }
+  .swiper-slide {
+    height: 550px;
+  }
+}
+/*********** 이종민 푸터 ************/
+footer {
+  padding: 15px 6px;
+  color: #fff;
+  background: black;
+}
+
+ul.qiuckmenu {
+  display: table;
+  width: 100%;
+}
+
+.qiuckmenu li {
+  display: table-cell;
+  width: 33.33%;
+  background: black;
+  border-right: 1px solid #222;
+  border-left: 1px solid #ccc;
+}
+
+.qiuckmenu li:first-child {
+  border-left: none;
+}
+
+.qiuckmenu li:last-child {
+  border-right: none;
+}
+
+.qiuckmenu a {
+  display: block;
+  text-align: center;
+  line-height: 33px;
+  font-size: 16px;
+}
+
+.telSns {
+  margin-top: 30px;
+}
+
+.telSns a {
+  font-size: 22px;
+  margin-left: 20px;
+}
+
+.telSns img {
+  width: 24px;
+  margin-left: 5px;
+  vertical-align: bottom;
+}
+
+.pc {
+  position: absolute;
+  right: 6px;
+  margin-top: -25px;
+  text-align: right;
+}
+
+.pc a {
+  display: inline-block;
+  padding: 4px 6px;
+  margin-bottom: 5px;
+  font-size: 12px;
+}
+
+.copy {
+  font-size: 10px;
+  margin-top: 15px;
+  margin-left: 20px;
+}
+
+.pc img {
+  width: 100px;
+  margin-top: 15px;
+}
+
+/*********** 이종민 푸터 ************/
+/*********** 서브페이지  ************/
+.sub_header {
+  z-index: 100;
+  position: fixed;
+  width: 100%;
+  color: black;
+  background: white;
+}
+.sub_header .sub_header_in {
+  max-width: 1240px;
+  margin: auto;
+  height: 120px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sub_header .sub_header_in section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.sub_header .sub_header_in span {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+#place {
+  background: white;
+  height: 400px;
+  width: 100%;
+  display: inline-block;
+  padding: 3px;
+}
+#place .right {
+  width: 30%;
+  height: 400px;
+  float: right;
+}
+#place .right h2 {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  margin-top: 350px;
+}
+#place .right p {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  font-size: clamp(15px, 3vw, 20px);
+  text-align: center;
+}
+#place .right span {
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+  text-decoration: underline;
+  font-size: 17px;
+  color: gray;
+}
+#place .left {
+  width: 70%;
+  height: 700px;
+}
+#place .left .main_img {
+  object-fit: cover;
+}
+
+.sub_header_in_bar_suv {
+  display: none;
+  position: absolute;
+  top: 80px;
+  z-index: 200;
+}
+
+.sub_header_in_bar_suv a {
+  display: block;
+  line-height: 40px;
+  text-align: left;
+  padding: 8px 0 0 30px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: lighter;
+  position: relative;
+  top: 30px;
+}
+
+.sub_header_in_bar_suv a:hover {
+  color: #c8bbf0;
+}
+
+.sub_header_in_bar_suv_shadow {
+  display: none;
+  position: fixed;
+  top: 100px;
+  left: 0;
+  width: 100%;
+  height: 220px;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.swiper_text {
+  position: absolute;
+  bottom: 90px;
+  left: 20px;
+  color: #fff;
+}
+.swiper_text h4 {
+  font-size: 30px;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.swiper-button-prev, .swiper-button-next {
+  color: white;
+  background: rgba(255, 255, 255, 0.4);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+.swiper-button-prev:after, .swiper-button-next:after {
+  font-size: 20px;
+}
+
+.swiper-pagination-fraction {
+  color: white;
+  width: auto;
+  left: 90%;
+  bottom: 20px;
+  top: auto;
+  padding: 0 5px;
+  border-radius: 9999px;
+  font-size: 11px;
+  line-height: 1.65;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.loction {
+  width: auto;
+  padding: 10px 20px 0 15px;
+}
+
+.location_inner {
+  display: block;
+  margin-left: 120px;
+  padding: 40px 0 70px 0;
+  font-size: 18px;
+  color: black;
+}
+
+.loaction i {
+  width: 21px;
+  height: 21px;
+}
+
+.sub_nav ul {
+  display: inline-block;
+  margin-left: 120px;
+}
+
+.sub_nav ul:after {
+  display: block;
+  content: "";
+  clear: both;
+}
+
+.sub_nav li {
+  float: left;
+  position: relative;
+}
+
+.sub_nav li a {
+  display: block;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+.sub_nav li.active a {
+  border-bottom: 1px solid #473970;
+  color: #473970;
+  font-weight: 500;
+  margin-bottom: -4px;
+}
+
+.sub_nav li.active a:after {
+  position: absolute;
+  content: "";
+  left: calc(50% - 11px);
+  bottom: -9px;
+  width: 22px;
+  height: 5px;
+  background: url("../img/icon_snb_arr.png");
+}
+
+.content_wrap {
+  padding: 100px;
+  margin-left: 130px;
+}
+
+/*********** 이종민 푸터 ************/
+footer {
+  padding: 15px 6px;
+  color: #fff;
+  background: black;
+}
+
+ul.qiuckmenu {
+  display: table;
+  width: 100%;
+}
+
+.qiuckmenu li {
+  display: table-cell;
+  width: 33.33%;
+  background: black;
+  border-right: 1px solid #222;
+  border-left: 1px solid #ccc;
+}
+
+.qiuckmenu li:first-child {
+  border-left: none;
+}
+
+.qiuckmenu li:last-child {
+  border-right: none;
+}
+
+.qiuckmenu a {
+  display: block;
+  text-align: center;
+  line-height: 33px;
+  font-size: 16px;
+}
+
+.telSns {
+  margin-top: 30px;
+}
+
+.telSns a {
+  font-size: 22px;
+  margin-left: 20px;
+}
+
+.telSns img {
+  width: 24px;
+  margin-left: 5px;
+  vertical-align: bottom;
+}
+
+.pc {
+  position: absolute;
+  right: 6px;
+  margin-top: -25px;
+  text-align: right;
+}
+
+.pc a {
+  display: inline-block;
+  padding: 4px 6px;
+  margin-bottom: 5px;
+  font-size: 12px;
+}
+
+.copy {
+  font-size: 10px;
+  margin-top: 15px;
+  margin-left: 20px;
+}
+
+.pc img {
+  width: 100px;
+  margin-top: 15px;
+}
+
+/*********** 이종민 푸터 ************/
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+section.notice {
+  padding: 80px 0;
+}
+
+.page-title {
+  margin-bottom: 60px;
+}
+
+.page-title h3 {
+  font-size: 28px;
+  color: #333333;
+  font-weight: 400;
+  text-align: center;
+}
+
+#board-search .search-window {
+  padding: 15px 0;
+  background-color: #f9f7f9;
+}
+
+#board-search .search-window .search-wrap {
+  position: relative;
+  /*   padding-right: 124px; */
+  margin: 0 auto;
+  width: 80%;
+  max-width: 564px;
+}
+
+#board-search .search-window .search-wrap input {
+  height: 40px;
+  width: 100%;
+  font-size: 14px;
+  padding: 7px 14px;
+  border: 1px solid #ccc;
+}
+
+#board-search .search-window .search-wrap input:focus {
+  border-color: #333;
+  outline: 0;
+  border-width: 1px;
+}
+
+#board-search .search-window .search-wrap .btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 108px;
+  padding: 0;
+  font-size: 16px;
+}
+
+.board-table {
+  font-size: 13px;
+  width: 100%;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.board-table a {
+  color: #333;
+  display: inline-block;
+  line-height: 1.4;
+  word-break: break-all;
+  vertical-align: middle;
+}
+
+.board-table a:hover {
+  text-decoration: underline;
+}
+
+.board-table th {
+  text-align: center;
+}
+
+.board-table .th-num {
+  width: 100px;
+  text-align: center;
+}
+
+.board-table .th-date {
+  width: 200px;
+}
+
+.board-table th, .board-table td {
+  padding: 14px 0;
+}
+
+.board-table tbody td {
+  border-top: 1px solid #e7e7e7;
+  text-align: center;
+}
+
+.board-table tbody th {
+  padding-left: 28px;
+  padding-right: 14px;
+  border-top: 1px solid #e7e7e7;
+  text-align: left;
+}
+
+.board-table tbody th p {
+  display: none;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0 30px;
+  font-size: 15px;
+  font-weight: 400;
+  background: transparent;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  text-transform: uppercase;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.btn-dark {
+  background: #555;
+  color: #fff;
+}
+
+.btn-dark:hover, .btn-dark:focus {
+  background: #373737;
+  border-color: #373737;
+  color: #fff;
+}
+
+.btn-dark {
+  background: #555;
+  color: #fff;
+}
+
+.btn-dark:hover, .btn-dark:focus {
+  background: #373737;
+  border-color: #373737;
+  color: #fff;
+}
+
+/* reset */
+* {
+  list-style: none;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.container {
+  width: 1100px;
+  margin: 0 auto;
+}
+
+.blind {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  width: 1px;
+  height: 1px;
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+@import './_variablesMixin.scss';
+@import './_reset.scss';
+@import './_basic.scss';
+@import './slick-theme.scss';
+@import './slick.scss';
+@import './nature.scss';
+@import './place.scss';
+@import './food.scss';
+@import './board.scss';
+
+// sass --watch scss/main.scss css/main.css
